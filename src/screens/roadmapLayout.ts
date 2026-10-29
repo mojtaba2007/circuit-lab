@@ -29,12 +29,12 @@ export type SectionSpec =
 
 /** هر عنصر یک جهان است و مجموع مرحله‌هایش باید با LEVELS هم‌خوان باشد (تست این را تضمین می‌کند). */
 export const SECTIONS: SectionSpec[] = [
-  { world: 'مبانی', kind: 'series', pre: 2, post: 4, symbol: 'R' },
+  { world: 'مبانی', kind: 'series', pre: 2, post: 5, symbol: 'R' },
   { world: 'کیرشهف', kind: 'parallel', pre: 0, left: 2, right: 2, post: 0, symbolL: 'R', symbolR: 'R' },
-  { world: 'معادل', kind: 'parallel', pre: 1, left: 1, right: 1, post: 2, symbolL: 'R', symbolR: 'R' },
-  { world: 'تحلیل', kind: 'parallel', pre: 2, left: 1, right: 1, post: 2, symbolL: 'R', symbolR: 'R' },
-  { world: 'پیشرفته', kind: 'parallel', pre: 1, left: 1, right: 1, post: 1, symbolL: 'R', symbolR: 'R', detector: true },
-  { world: 'خازن و سلف', kind: 'parallel', pre: 0, left: 3, right: 1, post: 2, symbolL: 'C', symbolR: 'L' },
+  { world: 'معادل', kind: 'parallel', pre: 2, left: 1, right: 1, post: 2, symbolL: 'R', symbolR: 'R' },
+  { world: 'تحلیل', kind: 'parallel', pre: 2, left: 2, right: 2, post: 3, symbolL: 'R', symbolR: 'R' },
+  { world: 'پیشرفته', kind: 'parallel', pre: 1, left: 2, right: 2, post: 2, symbolL: 'R', symbolR: 'R', detector: true },
+  { world: 'خازن و سلف', kind: 'parallel', pre: 0, left: 4, right: 3, post: 2, symbolL: 'C', symbolR: 'L' },
 ];
 
 export const MAP_W = 640;
