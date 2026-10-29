@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [react()],
   test: { environment: 'node', include: ['src/**/*.test.ts'] },
   // در توسعه، درخواست‌های /api به سرور حساب کاربری (npm run server) می‌رود
-  server: { proxy: { '/api': 'http://localhost:8787' } },
+  server: { strictPort: true, proxy: { '/api': 'http://localhost:8787' } },
 });
