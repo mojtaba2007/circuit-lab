@@ -1,5 +1,5 @@
 // سرور حساب کاربری و جدول برترین‌ها — بدون هیچ وابستگی بیرونی (فقط Node 22.13+)
-// اجرا: node server/index.mjs   (متغیرهای اختیاری: PORT، DB_PATH، SESSION_SECRET)
+// اجرا: node server/index.mjs   (پیش‌فرض پورت 5173؛ قابل تنظیم با PORT، DB_PATH، SESSION_SECRET)
 import http from 'node:http';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -262,7 +262,7 @@ function loadSecret() {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const port = Number(process.env.PORT ?? 8787);
+  const port = Number(process.env.PORT ?? 5173);
   const app = createApp({ dbPath: process.env.DB_PATH ?? path.join(here, 'data.sqlite'), secret: loadSecret(), distDir: path.join(here, '..', 'dist') });
-  app.listen(port, () => console.log(`circuit-lab server was run on http://localhost:${port}.`));
+  app.listen(port, '0.0.0.0', () => console.log(`circuit-lab server is running on port ${port}.`));
 }
